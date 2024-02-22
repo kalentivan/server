@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h1 class="title-lg text-center text-bold">Фильмы</h1>
+  <div class="row row-cols-1 row-cols-sm-2 g-3 gx-5">
+    <% @films.each do |film| %>
+    <div class="col-6 flex-cards">
+      <div class="card p-3 border bg-light card-columns">
+        <%= image_tag film.athor, height: 300 %>
+        <div class="card-body">
+            <p> <%= link_to "#{film.name}", film_path(film) %></p>
+            <p class="card-title">Длительность: <%= film.duration %> мин. </p>
+            <p class="card-text"><%= film.description %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
